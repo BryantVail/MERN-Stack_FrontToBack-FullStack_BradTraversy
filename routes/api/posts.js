@@ -1,0 +1,5 @@
+//posts.js
+/*
+    post,
+    comments[]
+*/
