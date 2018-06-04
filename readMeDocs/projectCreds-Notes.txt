@@ -1,0 +1,10 @@
+569
+
+Creds:[
+
+{
+	mongoString:	"mongodb://<dbuser>:<dbpassword>@ds016068.mlab.com:16068/eatsleepprintdb",
+	website:	"mLab.com",
+},
+
+]
