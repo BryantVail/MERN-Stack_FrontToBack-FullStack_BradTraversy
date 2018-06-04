@@ -1,10 +1,8 @@
 /*
     Bryant Vail
-    1-2_MainApp
+    1-3_before we begin
 
-    Redux Chrome extension
-    JSON web tokens, local web storage, beautiful
-    permissions
+    
 
 
 */
