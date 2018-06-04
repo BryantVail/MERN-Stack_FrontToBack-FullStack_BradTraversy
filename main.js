@@ -30,5 +30,10 @@
                 "name":"npm script for package: 'nodemon'",
                 "command":"node server"
             }
-        ]
+        ],
+        resources:(Separate files for each)
+            users,
+            profiles,
+            posts,
+
 */
