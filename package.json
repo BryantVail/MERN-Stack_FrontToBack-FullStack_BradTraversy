@@ -1,0 +1,31 @@
+{
+  "name": "mern-stack_fronttoback-fullstack_bradtraversy",
+  "version": "1.0.0",
+  "description": "example apps",
+  "main": "main.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.2",
+    "mongoose": "^5.1.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryantVail/MERN-Stack_FrontToBack-FullStack_BradTraversy.git"
+  },
+  "author": "Bryant Vail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryantVail/MERN-Stack_FrontToBack-FullStack_BradTraversy/issues"
+  },
+  "homepage": "https://github.com/BryantVail/MERN-Stack_FrontToBack-FullStack_BradTraversy#readme"
+}
