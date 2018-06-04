@@ -15,5 +15,16 @@
         bcryptjs
         validator
 
-        command: "npm install express mongoose passport passport-jwt jsonwebtoken body-parser bcryptjs validator"
+        commands: [
+            {
+                "name":"dependencies",
+                "command":"npm install express mongoose passport passport-jwt jsonwebtoken body-parser bcryptjs validator"
+
+            },
+            {
+                "name":"",
+                "command":"npm install -D nodemon",
+                "description":"watch node app & update for us instead of having to restart the app every time."
+            }
+        ]
 */

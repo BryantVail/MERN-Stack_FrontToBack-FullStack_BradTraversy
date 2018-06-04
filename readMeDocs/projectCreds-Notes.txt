@@ -2,9 +2,21 @@
 
 Creds:[
 
-{
-	mongoString:	"mongodb://<dbuser>:<dbpassword>@ds016068.mlab.com:16068/eatsleepprintdb",
-	website:	"mLab.com",
-},
+	{
+		mongoString:	"mongodb://<dbuser>:<dbpassword>@ds016068.mlab.com:16068/eatsleepprintdb",
+		website:		"mLab.com",
+	},
 
-]
+], 
+commands: [
+            {
+                "name":"dependencies",
+                "command":"npm install express mongoose passport passport-jwt jsonwebtoken body-parser bcryptjs validator"
+
+            },
+            {
+                "name":"",
+                "command":"npm install -D nodemon",
+                "description":"watch node app & update for us instead of having to restart the app every time."
+            }
+],
