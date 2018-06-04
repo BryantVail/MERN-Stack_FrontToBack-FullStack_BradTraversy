@@ -2,7 +2,7 @@
   "name": "mern-stack_fronttoback-fullstack_bradtraversy",
   "version": "1.0.0",
   "description": "example apps",
-  "main": "main.js",
+  "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
