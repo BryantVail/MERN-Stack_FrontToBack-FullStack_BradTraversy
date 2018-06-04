@@ -1,10 +1,8 @@
 /*
     Bryant Vail
-    1-3_before we begin
+    1-4_vsCodeSetup
 
-    Full project is on github
-        https://github.com/bradTraversy/devConnector
-    last video in each section will include the code for that section.
+    node.js
 
-    
+
 */
