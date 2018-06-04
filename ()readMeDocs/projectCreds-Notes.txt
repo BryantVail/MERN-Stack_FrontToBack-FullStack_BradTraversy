@@ -17,6 +17,14 @@ commands: [
             {
                 "name":"",
                 "command":"npm install -D nodemon",
-                "description":"watch node app & update for us instead of having to restart the app every time."
+                "description":"watch node app & update for us instead of having to restart the app every    time.",
+                "response":
+                    "
+                    [nodemon] 1.17.5
+                    [nodemon] to restart at any time, enter `rs`
+                    [nodemon] watching: *.*
+                    [nodemon] starting `node server.js`
+                    Server Running on port: 5000
+                    "
             }
 ],

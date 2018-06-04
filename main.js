@@ -25,6 +25,10 @@
                 "name":"",
                 "command":"npm install -D nodemon",
                 "description":"watch node app & update for us instead of having to restart the app every time."
+            },
+            {
+                "name":"npm script for package: 'nodemon'",
+                "command":"node server"
             }
         ]
 */
