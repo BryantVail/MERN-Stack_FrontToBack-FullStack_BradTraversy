@@ -10,10 +10,12 @@
 */
 
 const express = require("express");
-
 const router = express.Router();
 
-//body
+
+//@route    GET 'api/users/test'
+//@desc     Tests 'users' route
+//@access   public
 router.get("/test", (req, res)=> res.json({msg:"Users Works"}));
 /*
     example of what URL we want the server to respond to : 
