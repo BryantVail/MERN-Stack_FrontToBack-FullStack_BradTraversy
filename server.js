@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 //
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
-const profile = require("./routes/api/profiles");
+const profiles = require("./routes/api/profiles");
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.get("/",(req,res)=> res.send("Hello?"));
 //Use Routes
 app.use("/api/users", users);
 app.use("/api/posts", posts);
-app.use("api/profiles", profiles);
+app.use("/api/profiles", profiles);
 
 const port = process.env.PORT || 5000;
 
