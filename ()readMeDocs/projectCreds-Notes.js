@@ -32,8 +32,13 @@ let ProjectCreds = {
                     "name":"git add all",
                     "command":"git add .",
                     "description":"add contents from root/command location to the               repository",
-                    
 
+
+                },
+                {
+                    "name":"git something, 2-4, 12min",
+                    "command":"git commit -am 'Initial commit'",
+                    "description":"ammending a commit to the current branch"
                 }
     ],
     "routing":[
