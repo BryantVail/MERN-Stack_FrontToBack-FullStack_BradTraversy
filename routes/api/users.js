@@ -12,6 +12,9 @@
 const express = require("express");
 const router = express.Router();
 
+//Load User Model
+const User = require("../../models/User");
+
 
 //@route    GET 'api/users/test'
 //@desc     Tests 'users' route
@@ -23,6 +26,17 @@ router.get("/test", (req, res)=> res.json({msg:"Users Works"}));
     http://localhost:5000/api/users/test
     
 */
+
+//@route    GET 'api/users/reister'
+//@desc     Register User
+//@access   Public
+router.post("/register",(req,res)=> {
+    User.findOne({email:req.body.email});
+});
+
+
+
+
 module.exports = router;
 
 
