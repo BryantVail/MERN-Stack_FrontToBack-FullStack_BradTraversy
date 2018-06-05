@@ -12,6 +12,7 @@
 const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar");
+const bcrypt = require("bcryptjs");// this guy says to use bcryptjs & not 'bcrypt'
 //Load User Model
 const User = require("../../models/User");
 
@@ -47,7 +48,20 @@ router.post("/register",(req,res)=> {
                     avatar: avatar,
                     password:req.body.password
                 });
-            }
+                
+                //hash password before sending out
+                bcrypt.genSalt(10, (err, salt)=> {
+                    bcrypt.hash(newUser.password, salt, (err, hash)=> {
+                        if(err){
+                            throw err;
+                        }
+                        newUser.password = hash;
+                        newUser.save()
+                            .then(user => res.json(user))//returning the new record to verify the record that was inserted
+                            .catch(err => console.log(err))
+                    });
+                });
+            }//end else
                 
         })
 });
