@@ -2,6 +2,8 @@
 //registration, create user, mongodb, encrypt password, validation(later)
 
 // http://localhost:5000/api/users/register
+//server.js>app.use("api/users", users)
+//users.js>router.post("/register", (req,res){if email already in use, error, else: create record})
 //response below
 let responses = [
     {

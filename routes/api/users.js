@@ -28,7 +28,7 @@ router.get("/test", (req, res)=> res.json({msg:"Users Works"}));
     
 */
 
-//@route    GET 'api/users/reister'
+//@route    POST 'api/users/reister'
 //@desc     Register User
 //@access   Public
 router.post("/register",(req,res)=> {
@@ -64,8 +64,14 @@ router.post("/register",(req,res)=> {
             }//end else
                 
         })
-});
+});//end router.post("/register", (req,res)=>{});
 
+//@route    GET 'api/users/login'
+//@desc     Login User / Returning JWT Token
+//@access   public
+router.post("/login",(req,res) => {
+    
+});//end router.post("/login",(req,res)=>{});
 
 
 
