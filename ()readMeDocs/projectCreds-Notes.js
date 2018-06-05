@@ -39,6 +39,11 @@ let ProjectCreds = {
                     "name":"git something, 2-4, 12min",
                     "command":"git commit -am 'Initial commit'",
                     "description":"ammending a commit to the current branch"
+                }, 
+                {
+                    "name":"branch dervice from existing & switch",
+                    "command":"git checkout -b {NEW_branch_name} {SOURCE_branch_name}",
+                    "description":"creates new branch from existing branch, '-b' switch         also moves to the newly created branch",
                 }
     ],
     "routing":[
