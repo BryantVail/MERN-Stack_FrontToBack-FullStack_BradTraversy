@@ -27,6 +27,13 @@ let ProjectCreds = {
                     "command":"git init",
                     "description":"initializes git repository",
                     "response":"Reinitialized existing Git repository in C:/Users/Dell/Documents/GitHub/MERN-Stack_FrontToBack-FullStack_BradTraversy/.git/"
+                }, 
+                {
+                    "name":"git add all",
+                    "command":"git add .",
+                    "description":"add contents from root/command location to the               repository",
+                    
+
                 }
     ],
     "routing":[
