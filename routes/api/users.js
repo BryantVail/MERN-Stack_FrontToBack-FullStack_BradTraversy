@@ -106,7 +106,7 @@ router.post("/login",(req,res) => {
                                     token:"Bearer" + token
                                 });
                             })
-                        res.json({msg: "Success"});
+                        //res.json({msg: "Success"}); <- before a token was being passed
                     }else{
                         return(
                             res.status(400).json({password: "Password Incorrect"})
