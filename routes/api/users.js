@@ -14,6 +14,8 @@ const router    = express.Router();         //express.Router();
 const gravatar  = require("gravatar");      //avatar community/builder?
 const bcrypt    = require("bcryptjs");      // this guy says to use bcryptjs & not 'bcrypt'
 const jwt       = require("jsonwebtoken");  //webTokens for security & authorization
+const passport  = require("passport");
+
 const keys      = require("../../config/keys");
 
 //Load User Model
@@ -118,6 +120,12 @@ router.post("/login",(req,res) => {
         .catch(err => console.log(err));
 });//end router.post("/login",(req,res)=>{});
 
+//@route    GET 'api/users/current'
+//@desc     Return current user
+//@access   private
+router.get("/current",passport.authenticate("jwt", {session:false}), (req,res)=>{
+    res.json({msg:"Success"});
+});
 
 
 module.exports = router;
