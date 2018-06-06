@@ -9,10 +9,13 @@
     router.get/post/put
 */
 
-const express = require("express");
-const router = express.Router();
-const gravatar = require("gravatar");
-const bcrypt = require("bcryptjs");// this guy says to use bcryptjs & not 'bcrypt'
+const express   = require("express");
+const router    = express.Router();         //express.Router();
+const gravatar  = require("gravatar");      //avatar community/builder?
+const bcrypt    = require("bcryptjs");      // this guy says to use bcryptjs & not 'bcrypt'
+const jwt       = require("jsonwebtoken");  //webTokens for security & authorization
+const keys      = require("../../config/keys");
+
 //Load User Model
 const User = require("../../models/User");
 
@@ -85,7 +88,24 @@ router.post("/login",(req,res) => {
             bcrypt.compare(password, user.password/*hashed*/)//returns bool
                 .then(isMatch => {
                     if(isMatch){
-                        //send token
+                        //User Matched
+                        const payload = {//JWT Payload created
+                            id:     user.id,
+                            name:   user.name,
+                            avatar: user.avatar
+                        };
+                        //Sign Token
+                        //jwt.sign(payload(what we want to include in the token, ie:user info), )
+                        jwt.sign(
+                            payload, 
+                            keys.secretOrKey, 
+                            {expiresIn: 36000}, 
+                            (err, token)=>{
+                                res.json({
+                                    success:true,
+                                    token:"Bearer" + token
+                                });
+                            })
                         res.json({msg: "Success"});
                     }else{
                         return(
