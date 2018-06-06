@@ -3,14 +3,15 @@
 //server.js
 //eatSleepPrint
 
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const express       = require("express");
+const mongoose      = require("mongoose");
+const bodyParser    = require("body-parser");
+const passport      = require("passport");      //main authentication module
 
-//
-const users = require("./routes/api/users");
-const posts = require("./routes/api/posts");
-const profiles = require("./routes/api/profiles");
+//routes
+const users         = require("./routes/api/users");
+const posts         = require("./routes/api/posts");
+const profiles      = require("./routes/api/profiles");
 
 const app = express();
 
@@ -30,7 +31,11 @@ mongoose
 
 
 
-app.get("/",(req,res)=> res.send("Hello?"));
+//Passport Middleware
+app.use(passport.initialize());
+
+//Passport Config
+require("./config/passport")(passport);
 
 //Use Routes
 app.use("/api/users", users);
