@@ -70,12 +70,60 @@ router.post("/register",(req,res)=> {
 //@desc     Login User / Returning JWT Token
 //@access   public
 router.post("/login",(req,res) => {
-    
+    const reqEmail  = req.body.email;
+    const password  = req.body.password;
+
+    //Find user by email
+    User.findOne({email:reqEmail})
+        .then(user => {
+            //check for user
+            if(!user){
+                return res.status(404/*not found*/).json({email:"User not found"});
+            }
+            //if user = true || if email is a username in the DB
+            //check password (hashed in server)
+            bcrypt.compare(password, user.password/*hashed*/)//returns bool
+                .then(isMatch => {
+                    if(isMatch){
+                        //send token
+                        res.json({msg: "Success"});
+                    }else{
+                        return(
+                            res.status(400)
+                                .json({
+                                    msg: "Password is not correct for user",
+                                    user: user.email
+                                })
+                        );//end return
+                    }
+                })//end .then(isMatch)=>{}
+                .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
 });//end router.post("/login",(req,res)=>{});
 
 
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
